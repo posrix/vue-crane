@@ -1,0 +1,11 @@
+{
+  "name": "dev-utils",
+  "version": "1.0.0",
+  "description": "Useful utilities",
+  "author": "huangzhiyi <huangzhiyi@yundun.com>",
+  "private": true,
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "ip": "^1.1.5"
+  }
+}

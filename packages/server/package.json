@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Both development and production server inside",
+  "author": "posrix <posrix@outlook.com>",
+  "private": true,
+  "engines": {
+    "npm": ">=3",
+    "node": ">=8"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./cli.js",
+    "analyze": "cross-env ANALYZE=true NODE_ENV=development node ./index.js",
+    "local": "cross-env NODE_ENV=production API_ENV=release nodemon ./index.js",
+    "stage": "pm2 startOrReload ecosystem.config.js --env stage",
+    "pre": "pm2 startOrReload ecosystem.config.js --env pre",
+    "release": "pm2 startOrReload ecosystem.config.js --env release"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "compression": "^1.6.2",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^3.1.3",
+    "dev-utils": "1.0.0",
+    "es6-class-bind-all": "0.0.6",
+    "express": "^4.14.0",
+    "express-winston": "^2.4.0",
+    "fuzzy": "^0.1.3",
+    "http-proxy-middleware": "^0.17.4",
+    "inquirer": "^4.0.1",
+    "inquirer-autocomplete-prompt": "^0.12.1",
+    "minimist": "^1.2.0",
+    "nodemon": "^1.11.0",
+    "opn": "^4.0.2",
+    "pm2": "^2.5.0",
+    "serve-favicon": "^2.4.3",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
+  }
+}
