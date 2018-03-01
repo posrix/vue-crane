@@ -30,7 +30,7 @@
     "lint-staged:prettier": "prettier --config .prettierrc --write"
   },
   "lint-staged": {
-    "concurrent": "false",
+    "concurrent": false,
     "linters": {
       "+(src|config|packages|scripts)/**/*.js": [
         "lint-staged:prettier",
