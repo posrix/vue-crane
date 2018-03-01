@@ -4,7 +4,7 @@ A universal, modular, multi-page, full-stack Vue boilerplate to deal with mega p
 
 ## Features
 
-  - `element` as UI.
+  - `element-ui` as UI utilities.
   -  Combines `prettier` and `ESlint` in pre-commit hook using `lint-staged`. Stop worrying about shit code slip into your code base.
   - `pm2` as the production process manager.
   - `http-proxy-middleware` for remote server api proxy to avoid CORS error.
@@ -15,6 +15,7 @@ A universal, modular, multi-page, full-stack Vue boilerplate to deal with mega p
   - Combine development and production server in one `express` server.
   - `winston` as the logger system.
   - Support express router customization.
+  - Automatically generate bundle project for deployment.
 
 ## Getting started
 
