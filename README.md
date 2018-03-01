@@ -85,3 +85,7 @@ Second, Edit bundle script in `package.json`. There are three parameters require
 
 
 Finally, Type `npm run bundle` in your source project.
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
