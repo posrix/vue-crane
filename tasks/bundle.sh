@@ -1,7 +1,7 @@
 #!/bin/sh
 current_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-source_folder=$1
-bundle_folder=$2
+source_project=$1
+bundle_project=$2
 release_branch=$3
 
 if [ $current_branch = $release_branch ]
@@ -16,7 +16,7 @@ then
 
     if [ $? -eq 0 ]
     then
-      cd ../"$bundle_folder"
+      cd ../"$bundle_project"
 
       # git pull latest cod
       git pull origin $release_branch
@@ -28,7 +28,7 @@ then
       declare -a bundle_files=(dist/ packages/ external/ public/ lerna.json package.json)
       for file in "${bundle_files[@]}"
       do
-        cp -R ../"$source_folder"/"$file" ./bundle/"$file"
+        cp -R ../"$source_project"/"$file" ./bundle/"$file"
       done
 
       # trim packages/server folder
