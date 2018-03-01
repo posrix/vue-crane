@@ -1,10 +1,10 @@
 #!/bin/sh
-
 current_branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-source_folder=home-v5-frontend_node
-bundle_folder=home-v5-bundle
+source_folder=$1
+bundle_folder=$2
+release_branch=$3
 
-if [ $current_branch = master ]
+if [ $current_branch = $release_branch ]
 then
   read -p "Bundle Starting - are you sure? (y/n)" -n 1 -r
   echo    # new line
@@ -12,14 +12,14 @@ then
   then
     echo "Bundling..."
 
-    npm run clean && npm run bootstrap && npm run build:release && npm run prerender
+    npm run clean && npm run bootstrap && npm run build
 
     if [ $? -eq 0 ]
     then
       cd ../"$bundle_folder"
 
-      # git pull latest code to avoid warning
-      git pull origin master
+      # git pull latest cod
+      git pull origin $release_branch
 
       rm -rf ./bundle
       mkdir ./bundle
@@ -30,12 +30,6 @@ then
       do
         cp -R ../"$source_folder"/"$file" ./bundle/"$file"
       done
-
-      # remove prerender-seo, only use it at development
-      rm -rf ./bundle/packages/prerender-seo
-
-      # remove yundun-theme, only use it at development
-      rm -rf ./bundle/packages/yundun-theme
 
       # trim packages/server folder
       declare -a server_files_trim=(log/ .gitignore package-lock.json)
@@ -55,7 +49,7 @@ then
 
       git commit -m "Bundle Date [`date +%Y-%m-%d:%H:%M:%S`]"
 
-      git push origin master
+      git push origin $release_branch
 
       echo "Bundle Successfully at [`date +%Y-%m-%d:%H:%M:%S`]"
     fi
@@ -65,5 +59,5 @@ else
   RED='\033[0;31m'
   NC='\033[0m'
 
-  echo "${RED}Current branch isn't [master]${NC}"
+  echo "${RED}Current branch isn't [${release_branch}]${NC}"
 fi
