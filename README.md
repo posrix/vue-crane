@@ -28,7 +28,7 @@ npm run dev
 
 ## Dynamic Webpack Entry
 
-During the lifetime of developing a huge project. Let webpack build necessary file is much more decent rather than build the whole project. vue-crane use a cli entry to let user choose which module to develop.
+During the lifetime of development in a huge project. Let webpack build necessary file is much more decent rather than build the whole project. vue-crane use cli as the entrance to let user choose which module to develop.
 
 ## Server Side Development
 
