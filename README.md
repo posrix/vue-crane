@@ -1,6 +1,6 @@
 # vue-crane
 
-A universal, modular, multi-page, full-stack Vue boilerplate to deal with mega project, based on Node.js, Express, PM2, Lerna, Webpack, Babel, Vue.js, Element, PostCSS.
+A universal, modular, multi-page, full-stack Vue boilerplate to deal with huge project. Based on Node.js, Express, PM2, Lerna, Webpack, Babel, Vue.js, Element, PostCSS.
 
 ## Features
 
@@ -9,7 +9,7 @@ A universal, modular, multi-page, full-stack Vue boilerplate to deal with mega p
   - `pm2` as the production process manager.
   - `http-proxy-middleware` for remote server api proxy to avoid CORS error.
   - use `webpack dll` to improve build time performance.
-  - Support `dynamic webpack entry` using cli.
+  - Support `dynamic webpack entry` through cli.
   - `lerna` for managing multiple project in one project.
   - `postcss` for next generation css preprocessor.
   - Combine development and production server in one `express` server.
@@ -26,7 +26,11 @@ npm install
 npm run dev
 ```
 
-### Server Side Development
+## Dynamic Webpack Entry
+
+During the lifetime of development in a huge project. Let webpack build necessary file is much more decent rather than build the whole project. vue-crane use cli as the entrance to let user choose which module to develop.
+
+## Server Side Development
 
 Start a local production server with hot reload using `nodemon`.
 
@@ -44,7 +48,7 @@ There are `3` production environments in vue-crane:
 - `Pre-Release` Environment
 - `Release` Environment
 
-Each environment have their own npm script:
+Each environment has its own startup script:
 
 > Test Environment:
 
@@ -72,20 +76,22 @@ vue-crane use a bundle project called [vue-crane-bundle](https://github.com/posr
 - Quick roll-back to previous version while error occurred.
 - Only deploy necessary files to online production server.
 
-## Deployment Steps
+## Deployment Step
 
-First, Create a empty git repository as your bundle project. Add a remote url to any git repository hosting service. Make sure your bundle project is in the same folder level with your source project.
+1. Create a empty git repository as your bundle project. Add a remote url to any git repository hosting service. Make sure your bundle project is in the same folder level with your source project.
 
-Second, Edit bundle script in `package.json`. There are three parameters required in bundle script: `source_project`, `bundle_project`, `release_branch`
-
+2. Edit bundle script in `package.json`. Three parameters are required to provide: `source_project`, `bundle_project`, `release_branch`.
 ```json
 {
   "bundle": "sh ./tasks/bundle.sh source_project bundle_project release_branch"
 }
 ```
 
+3. Execute bundle script.
+```sh
+$ npm run bundle
+```
 
-Finally, Type `npm run bundle` in your source project.
 
 ## License
 
