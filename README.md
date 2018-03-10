@@ -30,6 +30,8 @@ npm run dev
 
 During the lifetime of development in a huge project. Let webpack build necessary file is much more decent rather than build the whole project. vue-crane use cli as the entrance to let user choose which module to develop.
 
+<img src="https://github.com/posrix/portrayal/blob/master/vue-crane/dynamic-webpack-entry-example.gif" width="500" align="center" />
+
 ## Server Side Development
 
 Start a local production server with hot reload using `nodemon`.
