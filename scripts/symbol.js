@@ -10,7 +10,6 @@ class _Symbol_ {
 
     let foundInPages = false
     pages.forEach(page => {
-      ;(page.required || page.symbol === symbol) && this.pages.push(page)
       if (page.symbol === symbol) {
         this.pages.push(page)
         this.setUrlPath(page)
@@ -34,9 +33,7 @@ class _Symbol_ {
   setUrlPath(page) {
     // Replace url path to '/' if page name is 'index'
     this.urlPath =
-      page.name === 'index'
-        ? `/${page.path}`
-        : `${page.path ? '/' + page.path : ''}/${page.name}`
+      page.name === 'index' ? `/${page.path}` : `${page.path ? '/' + page.path : ''}/${page.name}`
   }
 
   getPages() {
@@ -48,9 +45,12 @@ class _Symbol_ {
   }
 
   getEntries({ hmr = false } = {}) {
-    const container = hmr ? ['eventsource-polyfill'] : []
+    const container = []
+    if (hmr) {
+      container.push('webpack-hot-middleware/client?reload=true')
+      container.push('eventsource-polyfill')
+    }
     const entires = {}
-
     this.pages.forEach(page => {
       entires[page.name] = container.concat([page.entry])
     })

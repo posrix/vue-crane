@@ -89,13 +89,7 @@ module.exports = options => ({
   ]),
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.runtime.esm.js',
-      src: resolve(__dirname, '../src'),
-      packages: resolve(__dirname, '../packages'),
-      common: resolve(__dirname, '../src/common'),
-      payment: resolve(__dirname, '../src/payment'),
-      website: resolve(__dirname, '../src/website'),
-      console: resolve(__dirname, '../src/console')
+      vue$: 'vue/dist/vue.runtime.esm.js'
     },
     extensions: ['.js', '.vue', '.json'],
     mainFields: ['browser', 'module', 'main'],
