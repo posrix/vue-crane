@@ -5,7 +5,7 @@ const uniq = require('lodash/uniq')
 const dllConfig = {
   exclude: ['normalize.css'],
 
-  include: ['eventsource-polyfill'],
+  include: ['core-js', 'eventsource-polyfill', 'lodash'],
 
   path: join(__dirname, '../node_modules/dlls'),
 
