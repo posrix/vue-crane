@@ -30,6 +30,14 @@ class _Symbol_ {
     }
   }
 
+  getPages() {
+    return this.pages
+  }
+
+  getUrlPath() {
+    return this.urlPath
+  }
+
   setUrlPath(page) {
     // Replace url path to '/' if page name is 'index'
     this.urlPath =
