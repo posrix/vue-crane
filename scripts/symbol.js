@@ -36,20 +36,14 @@ class _Symbol_ {
       page.name === 'index' ? `/${page.path}` : `${page.path ? '/' + page.path : ''}/${page.name}`
   }
 
-  getPages() {
-    return this.pages
-  }
-
-  getUrlPath() {
-    return this.urlPath
-  }
-
   getEntries({ hmr = false } = {}) {
     const container = []
     if (hmr) {
       container.push('webpack-hot-middleware/client?reload=true')
       container.push('eventsource-polyfill')
+      container.push('core-js')
     }
+
     const entires = {}
     this.pages.forEach(page => {
       entires[page.name] = container.concat([page.entry])
