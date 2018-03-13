@@ -6,28 +6,28 @@ const pages = (exports.pages = [
     name: 'secA-modA',
     title: 'sectionA - ModuleA',
     symbol: 'sca1',
-    entry: resolve(__dirname, '../src/secA/modules/secA-modA/main.js')
+    entry: resolve(__dirname, '../src/secA/secA-modA/main.js')
   },
   {
     path: 'secA',
     name: 'secA-modB',
     title: 'sectionA - ModuleB',
     symbol: 'sca2',
-    entry: resolve(__dirname, '../src/secA/modules/secA-modB/main.js')
+    entry: resolve(__dirname, '../src/secA/secA-modB/main.js')
   },
   {
     path: 'secB',
     name: 'secB-modA',
     title: 'sectionB - ModuleA',
     symbol: 'scb1',
-    entry: resolve(__dirname, '../src/secB/modules/secB-modA/main.js')
+    entry: resolve(__dirname, '../src/secB/secB-modA/main.js')
   },
   {
     path: 'secB',
     name: 'secB-modB',
     title: 'sectionB - ModuleB',
     symbol: 'scb2',
-    entry: resolve(__dirname, '../src/secB/modules/secB-modB/main.js')
+    entry: resolve(__dirname, '../src/secB/secB-modB/main.js')
   }
 ])
 
