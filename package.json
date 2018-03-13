@@ -1,7 +1,7 @@
 {
   "name": "vue-crane",
   "version": "1.0.0",
-  "description": "A universal, modular, multi-page, full-stack Vue boilerplate to deal with mega project, based on Node.js, Express, PM2, Lerna, Webpack, Babel, Vue.js, Element, PostCSS",
+  "description": "A modular, multi-page, full-stack Vue boilerplate to deal with huge project. Based on Node.js, Express, PM2, Lerna, Webpack, Babel, Vue.js, Element, PostCSS",
   "author": "posrix <posrix@outlook.com>",
   "private": true,
   "repository": {
