@@ -92,9 +92,7 @@ module.exports = options => ({
       vue$: 'vue/dist/vue.runtime.esm.js'
     },
     extensions: ['.js', '.vue', '.json'],
-    mainFields: ['browser', 'module', 'main'],
-    modules: ['app', 'node_modules'],
-    unsafeCache: true
+    mainFields: ['browser', 'module', 'main']
   },
   target: 'web',
   devtool: options.devtool,
