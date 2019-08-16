@@ -1,4 +1,5 @@
-# vue-crane
+# vue-crane  (UNMAINTAINED)
+
 
 A universal, modular, multi-page, full-stack Vue boilerplate to deal with huge project. Based on Node.js, Express, PM2, Lerna, Webpack, Babel, Vue.js, Element, PostCSS.
 
