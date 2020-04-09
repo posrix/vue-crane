@@ -32,7 +32,7 @@
     "inquirer": "^4.0.1",
     "inquirer-autocomplete-prompt": "^0.12.1",
     "minimist": "^1.2.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^2.0.3",
     "opn": "^4.0.2",
     "pm2": "^2.5.0",
     "serve-favicon": "^2.4.3",
