@@ -17,7 +17,7 @@
     "release": "pm2 startOrReload ecosystem.config.js --env release"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.18.2",
     "chalk": "^2.3.0",
     "compression": "^1.6.2",
